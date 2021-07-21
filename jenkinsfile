@@ -24,11 +24,15 @@ pipeline {
 				stage('TEST2') {
 					agent { label 'agent1' }
 					steps {
+					catchError(builtResult:'SUCESS'.stageResult:'FAILURE')
+					{
 						sh 'sleep 5'	
 						echo "TESTING PHASE2"
-					}	
+						sh 'exit 1'
+					}
+				}	
 
-				}
+			}
 				/*stage('TEST3') {
 					agent { label 'master' }
 					steps {
