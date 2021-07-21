@@ -29,14 +29,14 @@ pipeline {
 					}	
 
 				}
-				stage('TEST3') {
+				/*stage('TEST3') {
 					agent { label 'master' }
 					steps {
 						sh 'sleep 5'	
 						echo "TESTING PHASE3"
 					}	
 
-				}
+				}*/
 				stage('TEST4') {
 					agent any
 					steps {
