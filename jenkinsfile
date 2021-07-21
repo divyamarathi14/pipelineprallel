@@ -24,7 +24,7 @@ pipeline {
 				stage('TEST2') {
 					agent { label 'agent1' }
 					steps {
-					catchError(builtResult : 'SUCCESS', stageResult : 'FAILURE')
+					catchError(buildResult : 'SUCCESS', stageResult : 'FAILURE')
 					{
 						sh 'sleep 5'	
 						echo "TESTING PHASE2"
